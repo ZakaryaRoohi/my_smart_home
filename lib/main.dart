@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'My Smart Home',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -82,24 +83,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-           GestureDetector(
-             child:  Container(
-               alignment: Alignment.center,
-               margin: const EdgeInsets.only(bottom: 25, right: 10, left: 10),
-               width: double.infinity,
-               height: 60,
-               decoration: const BoxDecoration(
-                   color: Colors.white,
-                   borderRadius: BorderRadius.all(Radius.circular(25))),
-               child: const Text(
-                 'Get Smart',
-                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-               )
-             ),
-             onTap: (){
-               Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen(title: 'Page2')));
-             },
-           )
+            GestureDetector(
+              child: Container(
+                  alignment: Alignment.center,
+                  margin:
+                      const EdgeInsets.only(bottom: 25, right: 10, left: 10),
+                  width: double.infinity,
+                  height: 60,
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  child: const Text(
+                    'Get Smart',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  )),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomeScreen(title: 'Page2')));
+              },
+            )
           ],
         ),
       ),
