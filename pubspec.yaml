@@ -67,6 +67,16 @@ flutter:
     - assets/images/408fbcae5f0f5916b429.png
     - assets/images/background.png
     - assets/images/light.png
+    - assets/images/profile.jpg
+    - assets/icons/Apps.png
+    - assets/icons/Home.png
+    - assets/icons/Notifications.png
+    - assets/icons/Vector.png
+    - assets/images/rooms/bedroom.png
+    - assets/images/rooms/dining_room.png
+    - assets/images/rooms/kitchen.png
+    - assets/images/rooms/living_room.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
