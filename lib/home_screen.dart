@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_smart_home/model/room_model.dart';
+import 'package:my_smart_home/room_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.title});
@@ -40,9 +41,9 @@ class _MyHomePageState extends State<HomeScreen> {
                 height: 300,
                 color: Colors.orange,
                 child: const Text(
-                  '1',
+                  'Home',
                   style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 50),
                 ),
@@ -54,9 +55,9 @@ class _MyHomePageState extends State<HomeScreen> {
                 height: 300,
                 color: Colors.orange,
                 child: const Text(
-                  '2',
+                  'Apps',
                   style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 50),
                 ),
@@ -126,7 +127,10 @@ class _MyHomePageState extends State<HomeScreen> {
                           itemBuilder: (BuildContext context, int index) {
                             return GestureDetector(
                               onTap: () {
-                                print(roomList[index].roomName);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RoomScreen()));
                               },
                               child: Container(
                                 margin: const EdgeInsets.symmetric(
@@ -171,9 +175,9 @@ class _MyHomePageState extends State<HomeScreen> {
                 height: 300,
                 color: Colors.orange,
                 child: Text(
-                  '4',
+                  'Notifications',
                   style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 50),
                 ),
@@ -185,9 +189,9 @@ class _MyHomePageState extends State<HomeScreen> {
                 height: 300,
                 color: Colors.orange,
                 child: Text(
-                  '5',
+                  'Profile',
                   style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 50),
                 ),
@@ -224,13 +228,35 @@ class _MyHomePageState extends State<HomeScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
-                            height: height * 0.05,
-                            child: Image.asset('assets/icons/Home.png'),
+                          GestureDetector(
+                            onTap: () {
+                              pageController.animateToPage(0,
+                                  duration: Duration(seconds: 1),
+                                  curve: Curves.easeInOutQuint);
+                            },
+                            child: SizedBox(
+                                height: height * 0.05,
+                                child: Image.asset(
+                                  'assets/icons/Home.png',
+                                  color: _bottomIndex == 0
+                                      ? Colors.red
+                                      : Colors.black,
+                                )),
                           ),
-                          SizedBox(
-                            height: height * 0.05,
-                            child: Image.asset('assets/icons/Apps.png'),
+                          GestureDetector(
+                            onTap: () {
+                              pageController.animateToPage(1,
+                                  duration: Duration(seconds: 1),
+                                  curve: Curves.easeInOutQuint);
+                            },
+                            child: SizedBox(
+                                height: height * 0.05,
+                                child: Image.asset(
+                                  'assets/icons/Apps.png',
+                                  color: _bottomIndex == 1
+                                      ? Colors.red
+                                      : Colors.black,
+                                )),
                           ),
                         ],
                       ),
@@ -240,14 +266,35 @@ class _MyHomePageState extends State<HomeScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
-                            height: height * 0.05,
-                            child:
-                                Image.asset('assets/icons/Notifications.png'),
+                          GestureDetector(
+                            onTap: () {
+                              pageController.animateToPage(3,
+                                  duration: Duration(seconds: 1),
+                                  curve: Curves.easeInOutQuint);
+                            },
+                            child: SizedBox(
+                                height: height * 0.05,
+                                child: Image.asset(
+                                  'assets/icons/Notifications.png',
+                                  color: _bottomIndex == 3
+                                      ? Colors.red
+                                      : Colors.black,
+                                )),
                           ),
-                          SizedBox(
-                            height: height * 0.04,
-                            child: Image.asset('assets/icons/Vector.png'),
+                          GestureDetector(
+                            onTap: () {
+                              pageController.animateToPage(4,
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.easeInOutQuint);
+                            },
+                            child: SizedBox(
+                                height: height * 0.04,
+                                child: Image.asset(
+                                  'assets/icons/Vector.png',
+                                  color: _bottomIndex == 4
+                                      ? Colors.red
+                                      : Colors.black,
+                                )),
                           ),
                         ],
                       ),

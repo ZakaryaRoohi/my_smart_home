@@ -76,6 +76,12 @@ flutter:
     - assets/images/rooms/dining_room.png
     - assets/images/rooms/kitchen.png
     - assets/images/rooms/living_room.png
+    - assets/icons/room/Air_Conditioner.png
+    - assets/icons/room/Fan_Speed.png
+    - assets/icons/room/Light.png
+    - assets/icons/room/TV.png
+
+
 
   #   - images/a_dot_ham.jpeg
 
